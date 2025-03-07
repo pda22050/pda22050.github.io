@@ -1,19 +1,16 @@
 <html>
 <head>
 <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-  <script 
-     src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js">
-  </script>
-</head>
-<body> 
-<a-scene background="color:cadetblue"pgysics>
-<a-plane static-body height="100" width="100" rotation="-90 0 0"></a-plane>
-<a-box dynamic-body="angularDamping: 1" position="1 5 -6" color="firebrick" scale="2 1 1"></a-box>
-<a-box dynamic-body="angularDamping: 1" position="2 3 -6" color="firebrick" scale="2 1 1"></a-box>
-  <a-entity camera look-controls wasd-controls position="0 1.6 0">
-    <a-sphere static-body position="0 -1 -1" scale="0.5 0.5 0.5" color="gray"></a-sphere>
-     <a-sphere static-body position="0 -0.25 -1" scale="0.25 0.25 0.25" color="black"></a-sphere>
-    </a-entity>
+ </head>
+  <body>
+    <a-scene id="s1" backround="color:#0d0928" fog="far:300" shandow="type:pcfsoft">
+     <a-camera position="0 3 0"></a-camera> 
+      <a-sphere radius="500" position="0 5000 0" material="fog: false"></a-sphere>
+      <a-entity position ="0 250 0" light="type: directional; intensity: 0.5; castShandow: true; shadowCameraBottom: -500; shadowCameraTop:500; shadowCameraLeft:-500; shadowCameraRight:500">\
+   </a-entity> 
+    <a-light  type="ambient" intensity="0.25"></a-light>
+      <a-plane colour="#2a1c0e" height="1000" width="1000" rotation="-90 0 0" medtalness="0" shadow></a-plane>
+      
 </a-scene>
 </body>
 </html>
