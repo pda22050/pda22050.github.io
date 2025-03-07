@@ -12,6 +12,17 @@
      }
      });
    </script>
+ <script> 
+  AFRAME.registerComponent('flying;, {
+                           tick: function(){
+   if(Math.random() <0.5) return;
+    var x=Math.random() * 100 - 50;
+    var y=Math.random() * 3 + 3;
+    var z=Math.random() * 100 - 50;
+   this.el.settAttribute('animation', 'property:position: to: '+x +'' + y + ' ' + z);
+  }
+  });
+ </script>
   <body>
     <a-scene id="s1" background="color:#0d0928" fog="far:300" shandow="type:pcfsoft">
      
@@ -68,6 +79,7 @@
      bee.setAttribute('rotation', '0' + r +'0');
      bee.setAttribute('sound', 'src:#bzzz; volume: 0.01; poolSize: 10');
      bee.setAttribute('sounding' , '');
+     bee.setAttribute('flying', ' ');
      scene1.appendChild(bee);
     }
    </script>
