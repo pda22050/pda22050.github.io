@@ -13,13 +13,13 @@
      });
    </script>
  <script> 
-  AFRAME.registerComponent('flying;, {
-    tick: function() {
-   if(Math.random() <0.5) return;
-    var x=Math.random() * 100 - 50;
-    var y=Math.random() * 3 + 3;
-    var z=Math.random() * 100 - 50;
-   this.el.setAttribute('animation', 'property:position; to: '+x +'' + y + ' ' + z);
+  AFRAME.registerComponent('flying' , {
+    tick: function () {
+   if(Math.random() < 0.5) return;
+    var x =Math.random() * 100 - 50;
+    var y =Math.random() * 3 + 3;
+    var z =Math.random() * 100 - 50;
+   this.el.setAttribute('animation', 'property: position; to: ' + x + '' + y + ' ' + z );
    }
   });
  </script>
@@ -79,7 +79,7 @@
      bee.setAttribute('rotation', '0' + r +'0');
      bee.setAttribute('sound', 'src:#bzzz; volume: 0.01; poolSize: 10');
      bee.setAttribute('sounding' , '');
-     bee.setAttribute('flying', ' ');
+     bee.setAttribute('flying', '');
      scene1.appendChild(bee);
     }
    </script>
