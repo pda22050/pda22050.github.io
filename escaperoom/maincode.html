@@ -6,16 +6,16 @@
  <script>
   var locked = true, tool = false, gas = true, massage = "", time = 5000;
   AFRAME.registerComponent('updating', { 
-   tick: funtion () {
+   tick: function () {
     if (gas) time--;
-    if(time<0) massege = "Game over...";
-  if (massege !="") this.el.setAttribute('value', massege);
+    if(time<0) massage = "Game over...";
+  if (massege !="") this.el.setAttribute('value', massage);
   else this.el.setAttribute('value', '' + Math.round(time / 100));
   var pos= document.getElementById('cam').getAttribute('position');
-  if(pos.x < -19)pos.x = -19;
-  if(pos.x > -19)pos.x = 19;
-  if(pos.z < -19)pos.z = -19;
-  if(pos.x > 19)pos.z = 19;
+  if (pos.x < -19) pos.x = -19;
+  if (pos.x > -19) pos.x = 19;
+  if (pos.z < -19) pos.z = -19;
+  if (pos.x > 19) pos.z = 19;
   document.getElementById('cam').getAttribute('position',pos);
      }
   });
