@@ -4,13 +4,13 @@
  <script src="https://c-frame.github.io/aframe-physics-system/dist/aframe-physics-system.js"></script>
  </head>
  <script>
-  var locked=true, tool=false, gas=true, massage ="", time =5000;
+  var locked = true, tool = false, gas = true, massage = "", time = 5000;
   AFRAME.registerComponent('updating', { 
-   tick: funtion() {
+   tick: funtion () {
     if (gas) time--;
-    if(time<0)massege="Game over...";
+    if(time<0) massege = "Game over...";
   if (massege !="") this.el.setAttribute('value', massege);
-  else this.el.setAtribute('value', '' + Math.round(time/100));
+  else this.el.setAttribute('value', '' + Math.round(time / 100));
   var pos= document.getElementById('cam').getAttribute('position');
   if(pos.x < -19)pos.x = -19;
   if(pos.x > -19)pos.x = 19;
