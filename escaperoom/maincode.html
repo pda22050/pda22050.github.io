@@ -9,9 +9,10 @@
    tick: function () {
     if (gas) time--;
     if(time<0) massage = "Game over...";
-  if (massege !="") this.el.setAttribute('value', massage);
+  if (massage !="") this.el.setAttribute('value', massage);
   else this.el.setAttribute('value', '' + Math.round(time / 100));
-  var pos= document.getElementById('cam').getAttribute('position');
+  
+    var pos = document.getElementById('cam').getAttribute('position');
   if (pos.x < -19) pos.x = -19;
   if (pos.x > -19) pos.x = 19;
   if (pos.z < -19) pos.z = -19;
