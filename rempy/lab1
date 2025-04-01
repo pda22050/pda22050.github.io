@@ -1,1 +1,66 @@
+# The script of the game goes in this file.
 
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+define player = Character("[player_name]", color="FFFFFF")
+define e = Character("Emma", color="#FFC0CB", image = "emma")
+define a = Character("Alex", color="#ADD8E6", image = "alex")
+define principal = Character("Principal", color="#DDDDDD")
+# The game starts here.
+image Alex normal = ("images/Sprites/Alex normal.png")
+image Alex angry = ("images/Alex angry.png")
+image Alex happy = ("images/Alex happy.png")
+image Alex sad = ("images/Alex sad.png")
+
+
+#Emma
+image Emma normal = ("images/Emma normal.png")
+image Emma angry = ("images/Emma angry.png")
+image Emma happy = ("images/Emma happy.png")
+image Emma sad = ("images/Emma sad.png")
+
+
+# Blurred background
+image bg classroom blurred = im.Blur("images/bg classroom day.png", 5)
+
+
+label start:
+
+    scene bg classroom blurred with dissolve
+
+    # Asking for the Player's Name
+    $ player_name = renpy.input("What is your name?")
+    $ player_name = player_name.strip() or "Player"
+
+    scene bg classroom day with fade
+    play music "classroom-background-54177 (1).mp3" loop
+    principal "Welcome to the Performing and Digital Arts Department, [player_name]!"
+    principal "We are happy to see you at University of the Peloponnese. Here, you'll find not only knowledge but also friends."
+    principal "Let me introduce you to our students. They will help you settle in."
+    principal "In this game, you must make at least one best friend, or you'll lose..."
+
+
+
+    # Show a background. This uses a placeholder by default, but you can
+    # add a file (named either "bg room.png" or "bg room.jpg") to the
+    # images directory to show it.
+
+    scene bg room
+
+    # This shows a character sprite. A placeholder is used, but you can
+    # replace it by adding a file named "eileen happy.png" to the images
+    # directory.
+
+    show eileen happy
+   
+    # These display lines of dialogue.
+
+    e "You've created a new Ren'Py game."
+
+    e "Once you add a story, pictures, and music, you can release it to the world!"
+    show anna happy 
+    
+    # This ends the game.
+
+    return
+#να κατεβασω τα αλλα απο το eclass τα δυο ζιπ
