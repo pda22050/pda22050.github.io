@@ -1,11 +1,66 @@
 <html>
+
 <head>
-<script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.4/dist/aframe-extras.min.js"></script>
+    <script>
+    // ΕΔΩ ΤΟΠΟΘΕΤΩ ΤΑ ΣΥΣΤΑΤΙΚΑ (COMPONENTS) ΠΟΥ ΕΧΩ ΔΗΜΙΟΥΡΓΗΣΕΙ
+        AFRAME.registerComponent('testing', {
+            init: function () {
+                this.el.addEventListener('click', e => {
+                    this.el.setAttribute('animation-mixer', { timeScale: 1 });
+                });
+            }
+        });
+    </script>
+    <style>
+        h1 { text-align: center; }
+        h3 { text-align: center; }
+        a-scene { width: 50%; height: 50%; border: dotted silver 1px; }
+    </style>
 </head>
-<body> 
-<a-scene background="color:cadetblue">
-<a-plane height="100" width="100" rotation="-90 0 0"></a-plane>
-<a-box position="1 5 -6" color="firebrick" scale="2 1 1"></a-box>
-</a-scene>
+
+<body>
+    <h1>arctic circle</h1>
+    <h3>Ευγενία Κωφίδου</h3>
+    <hr />
+    <P><strong>Σενάριο:</strong>...</P>
+    <hr />
+    <div align="center">
+    <!-- ΕΔΩ ΠΕΡΙΓΡΑΦΩ ΤΗ ΣΚΗΝΗ -->
+    <a-scene cursor="rayOrigin: mouse" background="color:cadetblue" ondblclick="this.requestFullscreen();" embedded>
+        <a-entity id="prisoner" fbx-model="src:url(Dying.fbx)" position="300 -150 -300"
+            animation-mixer="loop: once; clampWhenFinished: true; timeScale: 0" testing></a-entity>
+         <div class="sketchfab-embed-wrapper"> <iframe title="Birds in flight" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" a
+    </a-scene>
+    </div>
+    <script>
+    // ΕΔΩ ΔΗΜΙΟΥΡΓΩ ΠΟΛΛΑΠΛΑ ΑΝΤΙΓΡΑΦΑ ΜΙΑΣ ΟΝΤΟΤΗΤΑΣ
+       var scene1 = document.getElementById('s1');
+    for (var i= 0; i < 500; i++) {
+     var tree = document.createElement('a-entity');
+     var x = Math.random() * 800 - 400;
+     var z = Math.random() * 800 - 400;
+     var s = Math.random() * 15 + 5;
+     var r = Math.random() * 180 - 90;
+     tree.setAttribute('gltf-model', '#tree');
+     tree.setAttribute('position', x + ' 0 ' + z);
+     tree.setAttribute('scale' ,  s + ' ' + s + ' ' + s);
+     tree.setAttribute('rotation', '0' + r +'0');
+     tree.setAttribute('shadow', 'receive: false');
+     scene1.appendChild(snow_hill_vdbmabvva_mid);
+    }
+      for (var i = -300; i < 300; i += 300) {
+            var p = document.getElementById('prisoner').cloneNode(true);
+            p.setAttribute('position', i + ' -150 -300');
+            document.querySelector('a-scene').appendChild(snow_hill_vdbmabvva_mid.glb);
+        }
+       llow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/4cf318d9feb84aa391db164b668af42e/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/birds-in-flight-4cf318d9feb84aa391db164b668af42e?utm_medium=embed&utm_campaign=share-popup&utm_content=4cf318d9feb84aa391db164b668af42e" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Birds in flight </a> by <a href="https://sketchfab.com/chaitanyak?utm_medium=embed&utm_campaign=share-popup&utm_content=4cf318d9feb84aa391db164b668af42e" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Chaitanya Krishnan </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=4cf318d9feb84aa391db164b668af42e" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+    </script>
+    <hr />
+    <p><strong>Οδηγίες:<strong>...</p>
+    <hr />
+    <p><strong>Credits:</strong></p>
 </body>
+
 </html>
