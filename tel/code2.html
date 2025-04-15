@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.4/dist/aframe-extras.min.js"></script>
+    <script src="https://c-frame.github.io/aframe-physics-system/dist/aframe-physics-system.js"></script>
+ </head>
+    <script>
+    // ΕΔΩ ΤΟΠΟΘΕΤΩ ΤΑ ΣΥΣΤΑΤΙΚΑ (COMPONENTS) ΠΟΥ ΕΧΩ ΔΗΜΙΟΥΡΓΗΣΕΙ
+        AFRAME.registerComponent('testing', {
+            init: function () {
+                this.el.addEventListener('click', e => {
+                    this.el.setAttribute('animation-mixer', { timeScale: 1 });
+                });
+            }
+        });
+    </script>
+    <style>
+        h1 { text-align: center; }
+        h3 { text-align: center; }
+        a-scene { width: 50%; height: 50%; border: dotted silver 1px; }
+    </style>
+</head>
+
+<body>
+    <h1>arctic circle</h1>
+    <h3>Ευγενία Κωφίδου</h3>
+    <hr />
+    <P><strong>Σενάριο:</strong>...</P>
+    <hr />
+    <div align="center">
+    <!-- ΕΔΩ ΠΕΡΙΓΡΑΦΩ ΤΗ ΣΚΗΝΗ -->
+    <a-scene cursor="rayOrigin: mouse" background="color:cadetblue" ondblclick="this.requestFullscreen();" embedded>
+       <a-plane static-body width="40" height="8" position="-20 4 0" rotation="0 90 0">
+        <a-plane color="#2a1c0e" height="1000" width="1000" rotation="-90 0 0" medtalness="0" shadow></a-plane>
+        <a-assets-item id="scene" src="scene.gltf"></a-assets-item>
+        <a-entity gltf-model="#scene" scale="50 50 50 " shadow="receive:false" positon="5 50 5"></a-entity>
+        </a-scene>
+    </div>
+    <script>
+    // ΕΔΩ ΔΗΜΙΟΥΡΓΩ ΠΟΛΛΑΠΛΑ ΑΝΤΙΓΡΑΦΑ ΜΙΑΣ ΟΝΤΟΤΗΤΑΣ
+ var scene1 = document.getElementById('s1');
+    for (var i= 0; i < 500; i++) {
+     var scene = document.createElement('a-entity');
+     var x = Math.random() * 800 - 400;
+     var z = Math.random() * 800 - 400;
+     var s = Math.random() * 15 + 5;
+     var r = Math.random() * 180 - 90;
+     scene.setAttribute('gltf-model', '#tree');
+     scene.setAttribute('position', x + ' 0 ' + z);
+     scene.setAttribute('scale' ,  s + ' ' + s + ' ' + s);
+     scene.setAttribute('rotation', '0' + r +'0');
+     scene.setAttribute('shadow', 'receive: false');
+     scene1.appendChild(scene);
+    }
+    </script>
+    <hr />
+    <p><strong>Οδηγίες:<strong>...</p>
+    <hr />
+    <p><strong>Credits:</strong></p>
+</body>
+
+</html>
