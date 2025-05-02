@@ -43,7 +43,7 @@
         <a-scene id="s1" cursor="rayOrigin: mouse" background="color:cadetblue" ondblclick="this.requestFullscreen();" embedded>
             <a-assets>
                 <a-asset-item id="snow_hill_vdbmabvva_mid" src="snow_hill_vdbmabvva_mid.glb"></a-asset-item>
-                <a-asset-item id="tree" src="tree1.gltf"></a-asset-item>
+                <a-asset-item id="tree1" src="tree1.gltf"></a-asset-item>
                   <a-entity gltf-model="#tree1" scale="50 50 50" shadow="receive:false" position="5 0 5"></a-entity>
             </a-assets>
 
@@ -58,17 +58,17 @@
         // ΕΔΩ ΔΗΜΙΟΥΡΓΩ ΠΟΛΛΑΠΛΑ ΑΝΤΙΓΡΑΦΑ ΜΙΑΣ ΟΝΤΟΤΗΤΑΣ
         var scene1 = document.getElementById('s1');
         for (var i = 0; i < 500; i++) {
-            var tree = document.createElement('a-entity');
+            var tree1 = document.createElement('a-entity');
             var x = Math.random() * 800 - 400;
             var z = Math.random() * 800 - 400;
             var s = Math.random() * 15 + 5;
             var r = Math.random() * 180 - 90;
-tree.setAttribute('gltf-model', '#tree1');
-     tree.setAttribute('position', x + ' 0 ' + z);
-     tree.setAttribute('scale' ,  s + ' ' + s + ' ' + s);
-     tree.setAttribute('rotation', '0' + r +'0');
-     tree.setAttribute('shadow', 'receive: false');
-     scene1.appendChild(tree);
+tree1.setAttribute('gltf-model', '#tree1');
+     tree1.setAttribute('position', x + ' 0 ' + z);
+     tree1.setAttribute('scale' ,  s + ' ' + s + ' ' + s);
+     tree1.setAttribute('rotation', '0' + r +'0');
+     tree1.setAttribute('shadow', 'receive: false');
+     scene1.appendChild(tree1);
            
         }
     </script>
